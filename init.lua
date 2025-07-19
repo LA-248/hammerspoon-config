@@ -66,34 +66,18 @@ end)
 shiftWatcher:start()
 
 -- ChatGPT desktop app keybind
-local lastCmdCTap = 0
-local cmdCTapCount = 0
-local cmdCTapTimeout = 0.3 -- seconds
+local doubleTapThreshold = 0.25
+local lastCTime = 0
 
-local cmdCWatcher = hs.eventtap.new({hs.eventtap.event.types.keyDown}, function(event)
-    local flags = event:getFlags()
-    local keyCode = event:getKeyCode()
-
-    -- 8 = "C" key
-    if keyCode == 8 and flags.cmd and not (flags.alt or flags.shift or flags.ctrl) then
-        local now = hs.timer.secondsSinceEpoch()
-        if now - lastCmdCTap < cmdCTapTimeout then
-            cmdCTapCount = cmdCTapCount + 1
-        else
-            cmdCTapCount = 1
-        end
-        lastCmdCTap = now
-
-        if cmdCTapCount == 2 then
-            hs.application.launchOrFocus("ChatGPT")
-            cmdCTapCount = 0
-        end
+local keyBinding = hs.hotkey.new({"ctrl"}, "C", function()
+    local now = hs.timer.secondsSinceEpoch()
+    if (now - lastCTime) < doubleTapThreshold then
+        hs.application.launchOrFocus("ChatGPT")
     end
-
-    return false
+    lastCTime = now
 end)
 
-cmdCWatcher:start()
+keyBinding:enable()
 
 -- Ghostty keybind
 local lastCapsTap = 0
