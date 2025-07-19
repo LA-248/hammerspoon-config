@@ -121,3 +121,35 @@ local capsWatcher = hs.eventtap.new({hs.eventtap.event.types.flagsChanged}, func
 end)
 
 capsWatcher:start()
+
+-- Spotify keybind
+local lastCtrlTap = 0
+local ctrlTapCount = 0
+local ctrlTapTimeout = 0.3 -- seconds
+
+local ctrlWatcher = hs.eventtap.new({hs.eventtap.event.types.flagsChanged}, function(event)
+    local flags = event:getFlags()
+    local ctrlPressed = flags.ctrl
+
+    -- 59 = left ctrl, 62 = right ctrl
+    if event:getKeyCode() == 59 or event:getKeyCode() == 62 then
+        if ctrlPressed then
+            local now = hs.timer.secondsSinceEpoch()
+            if now - lastCtrlTap < ctrlTapTimeout then
+                ctrlTapCount = ctrlTapCount + 1
+            else
+                ctrlTapCount = 1
+            end
+            lastCtrlTap = now
+
+            if ctrlTapCount == 2 then
+                hs.application.launchOrFocus("Spotify")
+                ctrlTapCount = 0
+            end
+        end
+    end
+
+    return false
+end)
+
+ctrlWatcher:start()
