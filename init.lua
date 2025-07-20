@@ -65,20 +65,6 @@ end)
 
 shiftWatcher:start()
 
--- ChatGPT desktop app keybind
-local doubleTapThreshold = 0.25
-local lastCTime = 0
-
-local keyBinding = hs.hotkey.new({"ctrl"}, "C", function()
-    local now = hs.timer.secondsSinceEpoch()
-    if (now - lastCTime) < doubleTapThreshold then
-        hs.application.launchOrFocus("ChatGPT")
-    end
-    lastCTime = now
-end)
-
-keyBinding:enable()
-
 -- Ghostty keybind
 local lastCapsTap = 0
 local capsTapCount = 0
