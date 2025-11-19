@@ -123,3 +123,8 @@ local ctrlWatcher = hs.eventtap.new({hs.eventtap.event.types.flagsChanged}, func
 end)
 
 ctrlWatcher:start()
+
+-- Reload Hammerspoon config
+hs.hotkey.bind({ "cmd" }, "1", function()
+  hs.reload()
+end)
