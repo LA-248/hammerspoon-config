@@ -124,7 +124,7 @@ end)
 
 ctrlWatcher:start()
 
--- ChatGPT config
+-- ChatGPT keybind
 hs.hotkey.bind({ "cmd" }, "pagedown", function()
   hs.application.launchOrFocus("ChatGPT")
 end)
