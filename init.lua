@@ -124,7 +124,12 @@ end)
 
 ctrlWatcher:start()
 
+-- ChatGPT config
+hs.hotkey.bind({ "cmd" }, "pagedown", function()
+  hs.application.launchOrFocus("ChatGPT")
+end)
+
 -- Reload Hammerspoon config
-hs.hotkey.bind({ "cmd" }, "1", function()
+hs.hotkey.bind({ "cmd" }, "home", function()
   hs.reload()
 end)
