@@ -13,14 +13,9 @@ hs.hotkey.bind({ "ctrl", "alt", "shift" }, "r", function()
     hs.application.launchOrFocus("Visual Studio Code")
 end)
 
--- Ghostty keybind (Meh + w)
-hs.hotkey.bind({ "ctrl", "alt", "shift" }, "w", function()
-    hs.application.launchOrFocus("Ghostty")
-end)
-
--- Microsoft Teams keybind (Meh + e)
+-- Ghostty keybind (Meh + e)
 hs.hotkey.bind({ "ctrl", "alt", "shift" }, "e", function()
-    hs.application.launchOrFocus("Microsoft Teams")
+    hs.application.launchOrFocus("Ghostty")
 end)
 
 -- Spotify keybind (Meh + g)
@@ -31,6 +26,11 @@ end)
 -- ChatGPT keybind (Meh + n)
 hs.hotkey.bind({ "ctrl", "alt", "shift" }, "n", function()
     hs.application.launchOrFocus("ChatGPT")
+end)
+
+-- Microsoft Teams keybind (Meh + w)
+hs.hotkey.bind({ "ctrl", "alt", "shift" }, "w", function()
+    hs.application.launchOrFocus("Microsoft Teams")
 end)
 
 -- Reload Hammerspoon config
