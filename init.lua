@@ -13,8 +13,8 @@ hs.hotkey.bind({ "ctrl", "alt", "shift" }, "r", function()
     hs.application.launchOrFocus("Visual Studio Code")
 end)
 
--- Ghostty keybind (Meh + e)
-hs.hotkey.bind({ "ctrl", "alt", "shift" }, "e", function()
+-- Ghostty keybind (Meh + t)
+hs.hotkey.bind({ "ctrl", "alt", "shift" }, "t", function()
     hs.application.launchOrFocus("Ghostty")
 end)
 
