@@ -1,25 +1,25 @@
--- Bind Meh + y to lock the screen
-hs.hotkey.bind({ "ctrl", "alt", "shift" }, "y", function()
+-- Bind Meh + l to lock the screen
+hs.hotkey.bind({ "ctrl", "alt", "shift" }, "l", function()
     hs.caffeinate.lockScreen()
 end)
 
--- Google Chrome keybind (Meh + f)
-hs.hotkey.bind({ "ctrl", "alt", "shift" }, "f", function()
+-- Google Chrome keybind (Meh + g)
+hs.hotkey.bind({ "ctrl", "alt", "shift" }, "g", function()
     hs.application.launchOrFocus("Google Chrome")
 end)
 
--- VS Code keybind (Meh + r)
-hs.hotkey.bind({ "ctrl", "alt", "shift" }, "r", function()
+-- VS Code keybind (Meh + t)
+hs.hotkey.bind({ "ctrl", "alt", "shift" }, "t", function()
     hs.application.launchOrFocus("Visual Studio Code")
 end)
 
--- Ghostty keybind (Meh + t)
-hs.hotkey.bind({ "ctrl", "alt", "shift" }, "t", function()
+-- Ghostty keybind (Meh + h)
+hs.hotkey.bind({ "ctrl", "alt", "shift" }, "h", function()
     hs.application.launchOrFocus("Ghostty")
 end)
 
--- Spotify keybind (Meh + g)
-hs.hotkey.bind({ "ctrl", "alt", "shift" }, "g", function()
+-- Spotify keybind (Meh + y)
+hs.hotkey.bind({ "ctrl", "alt", "shift" }, "y", function()
     hs.application.launchOrFocus("Spotify")
 end)
 
@@ -28,12 +28,12 @@ hs.hotkey.bind({ "ctrl", "alt", "shift" }, "n", function()
     hs.application.launchOrFocus("ChatGPT")
 end)
 
--- Microsoft Teams keybind (Meh + w)
-hs.hotkey.bind({ "ctrl", "alt", "shift" }, "w", function()
+-- Microsoft Teams keybind (Meh + e)
+hs.hotkey.bind({ "ctrl", "alt", "shift" }, "e", function()
     hs.application.launchOrFocus("Microsoft Teams")
 end)
 
 -- Reload Hammerspoon config
-hs.hotkey.bind({ "ctrl", "alt", "shift" }, "h", function()
+hs.hotkey.bind({ "ctrl", "alt", "shift" }, "v", function()
   hs.reload()
 end)
