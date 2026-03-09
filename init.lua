@@ -5,13 +5,13 @@ hs.hotkey.bind(hyper, "l", function()
   hs.caffeinate.lockScreen()
 end)
 
--- Google Chrome keybind (Hyper + f)
-hs.hotkey.bind(hyper, "f", function()
+-- Google Chrome keybind (Hyper + r)
+hs.hotkey.bind(hyper, "r", function()
   hs.application.launchOrFocus("Google Chrome")
 end)
 
--- VS Code keybind (Hyper + r)
-hs.hotkey.bind(hyper, "r", function()
+-- VS Code keybind (Hyper + f)
+hs.hotkey.bind(hyper, "f", function()
   hs.application.launchOrFocus("Visual Studio Code")
 end)
 
