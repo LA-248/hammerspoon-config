@@ -31,7 +31,7 @@ hs.hotkey.bind(hyper, "n", function()
 end)
 
 -- Microsoft Teams keybind (Hyper + m)
-es.hotkey.bind(hyper, "m", function()
+hs.hotkey.bind(hyper, "m", function()
   hs.application.launchOrFocus("Microsoft Teams")
 end)
 
