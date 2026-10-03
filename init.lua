@@ -1,13 +1,13 @@
 local hyper = { "cmd", "ctrl", "alt", "shift" }
 
--- Bind Hyper + l to lock the screen
-hs.hotkey.bind(hyper, "l", function()
+-- Bind Hyper + 0 to lock the screen
+hs.hotkey.bind(hyper, "0", function()
 	hs.caffeinate.lockScreen()
 end)
 
--- Google Chrome keybind (Hyper + r)
+-- LibreWolf keybind (Hyper + r)
 hs.hotkey.bind(hyper, "r", function()
-	hs.application.launchOrFocus("Google Chrome")
+	hs.application.launchOrFocus("LibreWolf")
 end)
 
 -- Ghostty keybind (Hyper + j)
@@ -24,4 +24,3 @@ end)
 hs.hotkey.bind(hyper, "m", function()
 	hs.application.launchOrFocus("Microsoft Teams")
 end)
-
